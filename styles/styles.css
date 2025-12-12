@@ -1,0 +1,309 @@
+body{
+	margin:0;
+	background-size: cover;
+	height:100%;
+}
+
+/* Fonts */
+@font-face{
+	font-family:'CreteRound';
+	src: url('../fonts/CreteRound-Regular.woff2') format('woff2');
+}
+
+/* Page Layout */
+
+#grid{
+
+	display:grid;
+	
+	grid-template-rows:1fr 0.6fr 1.6fr 1.6fr 1.6fr 0.5fr;
+	grid-template-areas:
+		"menu"
+		"header"
+		"content"
+		"content"
+		"content"
+		"footer";
+
+	}
+
+/* navigation bar */
+
+nav{
+
+	grid-area:menu;
+	display:flex;
+	background-color:rgb(223,236,213);
+	align-items: center;
+	border-style:double;
+	border-color:#C4C4C4;
+	border-width:4px;
+
+}
+
+
+#navbar img{
+
+	width:60%;
+	height:auto;
+
+}
+
+.box{
+
+	text-align:center;
+	padding: 1rem 0.5rem;
+
+}
+
+.box p{
+
+	font-family:CreteRound;
+
+}
+
+.box a{
+
+	text-decoration:none;
+	font-family:CreteRound;
+	background-color:floralwhite;
+	border-radius:3px;
+	font-size:1rem;
+	color:black;
+	padding:0.2rem 0.3rem;
+
+}
+
+.box a:visited{
+
+	color:grey;
+
+}
+
+.box a:hover{
+
+	text-decoration:underline;
+	font-weight:bold;
+
+}
+
+.box a:active{
+
+	font-weight: bold;
+
+}
+
+/* Header */
+header{
+
+	grid-area:header;
+	display:flex;
+	background-color:rgb(255,251,199);
+	justify-content:center;
+	align-items:center;
+	border-style:double;
+	border-color:#C4C4C4;
+	border-width:4px;
+
+}
+
+h1{
+
+	font-family:CreteRound;
+
+}
+
+#contactbtn{
+	font-family:CreteRound;
+	font-size:1.2rem;
+	background:floralwhite;
+	padding:0.3rem 0.6rem;
+	border-radius:8px;
+}
+
+#cssbtn{
+	font-family:CreteRound;
+	font-size:1rem;
+	background:floralwhite;
+	padding:0.1rem 0.2rem;
+	border-radius:4px;
+}
+
+/* Main */
+main{
+
+	grid-area:content;
+	display:grid;
+	grid-template-rows:auto auto auto;
+	grid-template-areas:
+		"selfintro"
+		"education"
+		"photos";
+	background-color: #F7F7F5
+
+ }
+
+ #lefttop{
+
+	grid-area:selfintro;
+	padding:1rem;
+	border-style:double;
+	border-color:#C4C4C4;
+	border-width:4px;
+
+}
+
+#lefttop #introtitle,
+#lefttop #adventititle,
+#lefttop #skillstitle,
+#leftbottom #educationtitle,
+#leftbottom #ipsostitle,
+#leftbottom #intereststitle,
+#right #researchtitle,
+#right #pettitle{
+	font-size:1.5rem;
+	border-top: 1px solid;
+	border-left: 3px solid;
+	padding-left: 1em;
+}
+
+#leftbottom{
+
+	grid-area:education;
+	padding:1rem;
+	border-style:double;
+	border-color:#C4C4C4;
+	border-width:4px;
+
+}
+
+#right{
+
+	grid-area:photos;
+	padding:1rem;
+	border-style:double;
+	border-color:#C4C4C4;
+	border-width:4px;
+
+}
+
+#right img{
+	display:block;
+	width:100%;
+	height:auto;
+	object-fit:cover;
+
+}
+
+#leftbottom img{
+	display:block;
+	float:left;
+
+	width:50%;
+
+}
+
+#lefttop p,
+#lefttop ul,
+#leftbottom p,
+#leftbottom ul,
+#right p,
+#right ul{
+
+ 	font-family:CreteRound;
+ 	line-height:1.6;
+ 	font-size:1.2rem;
+
+ }
+
+ video{
+ 	width:100%;
+ 	max-width:100%;
+ 	display:block;
+ 	border-radius:6px;
+ }
+
+ /* Footer */
+	footer{
+
+		grid-area:footer;
+		font-family:CreteRound;
+		font-size:1.2rem;
+		text-align:center;
+
+	}
+
+/* Desktop & Laptop */
+@media(min-width:600px){
+
+	#grid{
+
+		display:grid;
+		grid-template-columns:1fr 4fr;
+		grid-template-rows:1fr 8fr 0.5fr;
+		grid-template-areas:
+			"menu header"
+			"menu content"
+			"footer footer";
+
+	}
+
+	nav{
+
+		grid-area:menu;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
+
+	}
+
+	#navbar{
+
+		width:100%;
+
+	}
+
+	main{
+
+ 		grid-area:content;
+ 		display:grid;
+ 		grid-template-columns:2fr 1fr;
+ 		grid-template-rows:auto auto;
+ 		grid-template-areas:
+			"selfintro photos"
+			"education photos";
+
+ 	}
+
+ 	#lefttop{
+
+ 		grid-area:selfintro;
+
+ 	}
+
+ 	#leftbottom{
+
+ 		grid-area:education;
+
+ 	}
+
+ 	#right{
+
+ 		grid-area:photos;
+
+ 	}
+
+ 	footer{
+
+		grid-area:footer;
+		font-family:CreteRound;
+		font-size:1.2rem;
+		text-align:center;
+
+	}
+
+}
+
+
+
